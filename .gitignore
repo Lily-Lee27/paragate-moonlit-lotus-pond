@@ -1,0 +1,21 @@
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Local configuration and deployment tooling
+.env
+.env.*
+!.env.example
+.dev.vars
+.wrangler/
+*.log
+
+# Unused source artwork retained locally for future design work.
+# The deployed application currently uses only moonlit-pond-bg.png
+# and lotus- lantern.png.
+assets/images/圆月亮.png
+assets/images/无柄荷叶1.png
+assets/images/无柄荷叶2.png
+assets/images/无柄荷叶4.png
+assets/images/透明背景的金色莲花夜景素材集.png
+assets/images/透明背景的金色莲花夜景素材集_副本.png

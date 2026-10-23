@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#081b35" />
+    <meta name="description" content="月下莲池——一个安静承载心愿、回忆与思绪的私人数字莲池。" />
+    <title>Paragate · 月下莲池</title>
+    <link rel="stylesheet" href="styles.css?v=20261021-8" />
+  </head>
+  <body>
+    <a class="skip-link" href="#release-button" data-i18n="skip">跳至放灯</a>
+
+    <main class="experience" id="experience">
+      <header class="topbar">
+        <button class="quiet-icon-button menu-button" id="menu-button" type="button" aria-haspopup="dialog" aria-controls="menu-dialog" aria-label="打开菜单">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 8.5h14M5 15.5h14" />
+          </svg>
+        </button>
+      </header>
+
+      <section class="sky" aria-labelledby="site-title">
+        <div class="brand-lockup">
+          <p class="eyebrow">PARAGATE</p>
+          <h1 id="site-title" data-i18n="siteTitle">月下莲池</h1>
+          <p class="poem" data-i18n="tagline">一念起，一灯明。</p>
+        </div>
+      </section>
+
+      <section class="pond" id="pond" aria-label="我的莲池">
+        <div class="lantern-layer" id="lantern-layer"></div>
+        <div class="ripple-layer" id="ripple-layer" aria-hidden="true"></div>
+
+        <div class="release-dock">
+          <button class="release-button" id="release-button" type="button">
+            <span data-i18n="releaseCta">放下一盏莲花灯</span>
+          </button>
+          <p class="dock-whisper" data-i18n="principleShort">莲池只负责承载，不负责评判。</p>
+        </div>
+      </section>
+    </main>
+
+    <svg class="svg-definitions" aria-hidden="true">
+      <defs>
+        <radialGradient id="lanternGlow" cx="50%" cy="48%" r="55%">
+          <stop offset="0" stop-color="#fffdf0" stop-opacity="1" />
+          <stop offset="0.3" stop-color="#ffe9ad" stop-opacity=".92" />
+          <stop offset="0.68" stop-color="#e2b65f" stop-opacity=".4" />
+          <stop offset="1" stop-color="#c18a38" stop-opacity="0" />
+        </radialGradient>
+        <linearGradient id="petalGoldBack" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff8dc" stop-opacity=".62" />
+          <stop offset=".54" stop-color="#efcc7e" stop-opacity=".48" />
+          <stop offset="1" stop-color="#9d6b2d" stop-opacity=".2" />
+        </linearGradient>
+        <linearGradient id="petalGoldFront" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fffce9" stop-opacity=".9" />
+          <stop offset=".45" stop-color="#f3d38c" stop-opacity=".78" />
+          <stop offset="1" stop-color="#a87331" stop-opacity=".38" />
+        </linearGradient>
+        <linearGradient id="petalEdge" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#fff9dc" stop-opacity=".96" />
+          <stop offset=".5" stop-color="#eecb80" stop-opacity=".74" />
+          <stop offset="1" stop-color="#b47d34" stop-opacity=".28" />
+        </linearGradient>
+        <linearGradient id="lotusBowl" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffeab2" stop-opacity=".9" />
+          <stop offset="1" stop-color="#a66e2b" stop-opacity=".46" />
+        </linearGradient>
+        <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="3.4" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <filter id="petalShadow" x="-50%" y="-50%" width="200%" height="220%">
+          <feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#020a15" flood-opacity=".52" />
+        </filter>
+        <symbol id="lotus-lantern" viewBox="0 0 120 96">
+          <ellipse cx="60" cy="77" rx="43" ry="7" fill="#0a1625" opacity=".4" />
+          <ellipse cx="60" cy="67" rx="35" ry="27" fill="url(#lanternGlow)" opacity=".72" filter="url(#softGlow)" />
+
+          <g fill="url(#petalGoldBack)" stroke="url(#petalEdge)" stroke-width="1" stroke-linejoin="round" filter="url(#petalShadow)">
+            <path d="M60 71C43 57 43 34 53 14c9 14 12 34 7 57Z" />
+            <path d="M60 71c17-14 17-37 7-57-9 14-12 34-7 57Z" />
+            <path d="M60 73C39 67 27 47 31 27c15 6 27 21 29 46Z" />
+            <path d="M60 73c21-6 33-26 29-46-15 6-27 21-29 46Z" />
+            <path d="M60 75C34 76 17 64 13 45c17-1 34 9 47 30Z" />
+            <path d="M60 75c26 1 43-11 47-30-17-1-34 9-47 30Z" />
+          </g>
+
+          <g fill="url(#petalGoldFront)" stroke="url(#petalEdge)" stroke-width="1.05" stroke-linejoin="round">
+            <path d="M60 75C46 63 43 45 50 29c10 10 15 25 10 46Z" />
+            <path d="M60 75c14-12 17-30 10-46-10 10-15 25-10 46Z" />
+            <path d="M60 77C42 73 32 59 34 43c13 4 23 15 26 34Z" />
+            <path d="M60 77c18-4 28-18 26-34-13 4-23 15-26 34Z" />
+            <path d="M60 79C39 81 25 73 20 59c14-1 28 5 40 20Z" />
+            <path d="M60 79c21 2 35-6 40-20-14-1-28 5-40 20Z" />
+            <path d="M60 79c-11-8-15-19-12-31 9 6 13 16 12 31Z" />
+            <path d="M60 79c11-8 15-19 12-31-9 6-13 16-12 31Z" />
+          </g>
+
+          <g fill="none" stroke="#fff6cf" stroke-width=".55" opacity=".54" stroke-linecap="round">
+            <path d="M60 70 53 20M60 70l7-50M57 71 34 33M63 71l23-38M55 74 18-25M65 74l18-25M53 77 23 62M67 77l-23-15" />
+          </g>
+
+          <path d="M39 72c8 6 34 6 42 0l-5 12c-9 5-23 5-32 0Z" fill="url(#lotusBowl)" stroke="#f5d995" stroke-width=".9" />
+          <ellipse cx="60" cy="72" rx="19" ry="4.4" fill="#a56a29" opacity=".8" stroke="#ffe3a0" stroke-width=".8" />
+          <ellipse cx="60" cy="71" rx="13" ry="2.7" fill="#ffe9ad" opacity=".72" />
+          <path d="M60 69c-6-7-3-14 0-18 4 5 6 11 0 18Z" fill="#fffbea" stroke="#ffd67c" stroke-width=".8" filter="url(#softGlow)" />
+          <circle cx="60" cy="66" r="5" fill="#fff1b8" opacity=".48" filter="url(#softGlow)" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <dialog class="panel writing-panel" id="write-dialog" aria-labelledby="write-title">
+      <form method="dialog" class="panel-shell" id="write-form">
+        <button class="panel-close" value="cancel" type="submit" aria-label="返回">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+        </button>
+        <div class="panel-heading">
+          <p class="panel-kicker">PARAGATE</p>
+          <h2 id="write-title" data-i18n="writeTitle">此刻，你想放下什么？</h2>
+          <p data-i18n="writeNote">可以是一份心愿，一段回忆，或一个暂时无解的烦恼。</p>
+        </div>
+        <label class="sr-only" for="entry-text" data-i18n="entryLabel">莲灯中的文字</label>
+        <textarea id="entry-text" maxlength="500" rows="8" data-i18n-placeholder="placeholder" placeholder="一份心愿，一段回忆，或一个暂时无解的烦恼……"></textarea>
+        <div class="writing-meta"><span data-i18n="plainText">仅保存原文</span><output id="character-count" for="entry-text">0 / 500</output></div>
+        <div class="panel-actions">
+          <button class="text-button" id="write-back" value="cancel" type="submit" data-i18n="back">返回</button>
+          <button class="gold-button" id="confirm-release" value="default" type="submit">
+            <span data-i18n="releaseConfirm">放下莲灯</span>
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="panel memory-panel" id="memory-dialog" aria-labelledby="memory-title">
+      <div class="panel-shell">
+        <button class="panel-close" id="memory-close" type="button" aria-label="关闭">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+        </button>
+        <p class="panel-kicker" data-i18n="aLantern">一盏莲灯</p>
+        <h2 class="sr-only" id="memory-title" data-i18n="memoryTitle">莲灯记忆</h2>
+        <time class="memory-date" id="memory-date"></time>
+        <div class="memory-rule" aria-hidden="true"><span></span></div>
+        <p class="memory-text" id="memory-text"></p>
+        <button class="text-button centered-close" id="memory-close-secondary" type="button" data-i18n="close">合上</button>
+      </div>
+    </dialog>
+
+    <dialog class="panel menu-panel" id="menu-dialog" aria-labelledby="menu-title">
+      <div class="panel-shell">
+        <button class="panel-close" id="menu-close" type="button" aria-label="关闭">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+        </button>
+        <p class="panel-kicker">PARAGATE</p>
+        <h2 id="menu-title" data-i18n="menuTitle">月下莲池</h2>
+        <p class="menu-count" id="menu-count"></p>
+        <nav class="menu-list" aria-label="莲池选项">
+          <button id="my-pond-button" type="button"><span data-i18n="myPond">我的莲池</span><span aria-hidden="true">›</span></button>
+          <button id="export-button" type="button"><span data-i18n="export">导出我的莲池</span><span aria-hidden="true">↓</span></button>
+          <button id="import-button" type="button"><span data-i18n="import">导入莲池</span><span aria-hidden="true">↑</span></button>
+          <button id="about-button" type="button"><span data-i18n="about">关于</span><span aria-hidden="true">›</span></button>
+        </nav>
+        <div class="language-row">
+          <span data-i18n="language">语言</span>
+          <div class="segmented" role="group" aria-label="语言">
+            <button type="button" data-language="zh" aria-pressed="true">中文</button>
+            <button type="button" data-language="en" aria-pressed="false">EN</button>
+          </div>
+        </div>
+        <p class="privacy-note" data-i18n="privacyShort">文字只保存在此浏览器。清除浏览数据或更换设备可能会使它们消失。</p>
+      </div>
+    </dialog>
+
+    <dialog class="panel archive-panel" id="archive-dialog" aria-labelledby="archive-title">
+      <div class="panel-shell">
+        <button class="panel-close" id="archive-close" type="button" aria-label="关闭">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+        </button>
+        <p class="panel-kicker" data-i18n="myPond">我的莲池</p>
+        <h2 id="archive-title" data-i18n="archiveTitle">灯影簿</h2>
+        <p class="archive-intro" data-i18n="archiveIntro">每一盏灯都保留着写下时的原文与时刻。</p>
+        <div class="archive-list" id="archive-list"></div>
+      </div>
+    </dialog>
+
+    <dialog class="panel about-panel" id="about-dialog" aria-labelledby="about-title">
+      <div class="panel-shell">
+        <button class="panel-close" id="about-close" type="button" aria-label="关闭">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+        </button>
+        <p class="panel-kicker">PARAGATE</p>
+        <h2 id="about-title" data-i18n="aboutTitle">关于月下莲池</h2>
+        <div class="about-copy">
+          <p data-i18n="aboutOne">这里是一方安静的私人莲池。</p>
+          <p data-i18n="aboutAction">写下心愿、回忆、念头，或暂时无解的烦恼，然后让一盏灯替你承载。</p>
+          <blockquote data-i18n="principle">莲池只负责承载，不负责评判。</blockquote>
+          <details class="about-privacy">
+            <summary data-i18n="privacyDetails">关于记录与隐私</summary>
+            <div class="about-privacy-copy">
+              <p data-i18n="aboutTwo">没有账号，没有云端同步，也不会分析、上传或改变你的文字。</p>
+              <p data-i18n="storageCaveat">记录保存在当前浏览器的 localStorage 中。它不是永久存储：清除浏览数据、使用无痕模式、更换浏览器或设备，都可能令记录消失。你可以定期导出备份。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="panel import-panel" id="import-dialog" aria-labelledby="import-title">
+      <form method="dialog" class="panel-shell" id="import-form">
+        <button class="panel-close" value="cancel" type="submit" aria-label="关闭">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+        </button>
+        <p class="panel-kicker" data-i18n="import">导入莲池</p>
+        <h2 id="import-title" data-i18n="importConfirmTitle">确认合入莲池</h2>
+        <p id="import-summary"></p>
+        <p class="privacy-note" data-i18n="importSafety">现有莲灯不会被覆盖；相同 ID 的记录将被安全跳过。</p>
+        <div class="panel-actions">
+          <button class="text-button" value="cancel" type="submit" data-i18n="back">返回</button>
+          <button class="gold-button" id="confirm-import" value="default" type="submit" data-i18n="confirmImport">确认导入</button>
+        </div>
+      </form>
+    </dialog>
+
+    <input id="file-input" type="file" accept="application/json,.json" hidden />
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="app.js?v=20261021-8" defer></script>
+  </body>
+</html>
